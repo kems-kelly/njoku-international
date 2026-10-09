@@ -1,5 +1,6 @@
 import React from 'react';
-import { siteContent } from './data/content';
+import Header from './components/Header';
+import Hero from './sections/Hero';
 
 export default function App() {
   return (
@@ -7,14 +8,9 @@ export default function App() {
       <a href="#main-content" className="skip-link">
         Skip to main content
       </a>
+      <Header />
       <main id="main-content">
-        <header className="section section--deep-navy">
-          <div className="container">
-            <span className="section-eyebrow">{siteContent.hero.eyebrow}</span>
-            <h1 className="section-title">{siteContent.hero.name}</h1>
-            <p className="section-intro">{siteContent.hero.headline}</p>
-          </div>
-        </header>
+        <Hero />
       </main>
     </div>
   );

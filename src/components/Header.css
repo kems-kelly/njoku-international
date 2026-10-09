@@ -1,0 +1,126 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  height: var(--space-64);
+  display: flex;
+  align-items: center;
+  background-color: transparent;
+  border-bottom: 1px solid transparent;
+  transition: background-color var(--transition), border-color var(--transition);
+}
+
+.header--scrolled {
+  background-color: var(--navy-900);
+  border-bottom-color: var(--navy-500);
+}
+
+.header__container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header__brand {
+  display: flex;
+  align-items: center;
+  gap: var(--space-12);
+  text-decoration: none;
+  color: var(--white);
+}
+
+.header__monogram {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--space-32);
+  height: var(--space-32);
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--gold-500);
+  color: var(--gold-500);
+  font-family: var(--font-serif);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  letter-spacing: 0.05em;
+}
+
+.header__wordmark {
+  font-family: var(--font-serif);
+  font-size: var(--text-base);
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  color: var(--white);
+}
+
+.header__nav {
+  display: none;
+}
+
+.header__nav-list {
+  display: flex;
+  align-items: center;
+  gap: var(--space-32);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.header__nav-link {
+  font-family: var(--font-sans);
+  font-size: var(--text-sm);
+  font-weight: 400;
+  color: var(--mist);
+  text-decoration: none;
+  position: relative;
+  padding-block: var(--space-8);
+  transition: color var(--transition);
+}
+
+.header__nav-link:hover {
+  color: var(--gold-500);
+}
+
+.header__actions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-16);
+}
+
+.header__cta {
+  display: none;
+}
+
+.header__toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--space-48);
+  height: var(--space-48);
+  background: transparent;
+  border: 1px solid var(--navy-500);
+  border-radius: var(--radius-sm);
+  color: var(--white);
+  cursor: pointer;
+  transition: border-color var(--transition), color var(--transition);
+}
+
+.header__toggle:hover {
+  border-color: var(--gold-500);
+  color: var(--gold-500);
+}
+
+@media (min-width: 900px) {
+  .header__nav {
+    display: block;
+  }
+
+  .header__cta {
+    display: inline-flex;
+  }
+
+  .header__toggle {
+    display: none;
+  }
+}
