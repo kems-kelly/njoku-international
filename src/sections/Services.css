@@ -1,0 +1,124 @@
+.services {
+  background-color: var(--white);
+  border-bottom: 1px solid var(--line);
+}
+
+.services__header {
+  margin-bottom: var(--space-64);
+}
+
+.services__list {
+  display: flex;
+  flex-direction: column;
+}
+
+.services__row {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-16);
+  padding-block: var(--space-32);
+  border-top: 1px solid var(--line);
+  position: relative;
+  transition: background-color var(--transition), border-color var(--transition);
+  transition-delay: calc(var(--i, 0) * 80ms);
+}
+
+.services__row:last-child {
+  border-bottom: 1px solid var(--line);
+}
+
+@media (min-width: 900px) {
+  .services__row {
+    grid-template-columns: var(--space-64) 1.2fr 1.5fr var(--space-32);
+    align-items: baseline;
+    gap: var(--space-32);
+    padding-block: var(--space-48);
+  }
+}
+
+.services__row-num {
+  display: flex;
+  align-items: center;
+}
+
+.services__num {
+  font-family: var(--font-serif);
+  font-size: var(--text-xl);
+  font-weight: 500;
+  color: var(--gold-500);
+}
+
+.services__row-title {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-8);
+}
+
+.services__item-heading {
+  font-family: var(--font-serif);
+  font-size: var(--text-2xl);
+  font-weight: 500;
+  color: var(--ink);
+  line-height: 1.25;
+  margin: 0;
+  transition: transform var(--transition), color var(--transition);
+}
+
+.services__line-indicator {
+  width: 0;
+  height: 1px;
+  background-color: var(--gold-500);
+  transition: width var(--transition);
+}
+
+.services__row:hover .services__item-heading {
+  transform: translateX(var(--space-8));
+  color: var(--navy-700);
+}
+
+.services__row:hover .services__line-indicator {
+  width: var(--space-48);
+}
+
+.services__row-desc {
+  display: flex;
+  align-items: center;
+}
+
+.services__item-text {
+  font-family: var(--font-sans);
+  font-size: var(--text-base);
+  color: var(--ink-soft);
+  line-height: 1.6;
+  margin: 0;
+  max-width: 60ch;
+}
+
+.services__row-icon {
+  display: none;
+  color: var(--ink-soft);
+  opacity: 0.5;
+  transition: color var(--transition), opacity var(--transition), transform var(--transition);
+}
+
+@media (min-width: 900px) {
+  .services__row-icon {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .services__row:hover .services__row-icon {
+    color: var(--gold-500);
+    opacity: 1;
+    transform: translate(var(--space-4), calc(0px - var(--space-4)));
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .services__row:hover .services__item-heading {
+    transform: none;
+  }
+  .services__row:hover .services__row-icon {
+    transform: none;
+  }
+}

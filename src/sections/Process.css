@@ -1,0 +1,124 @@
+.process {
+  background-color: var(--mist);
+  border-bottom: 1px solid var(--line);
+}
+
+.process__header {
+  margin-bottom: var(--space-64);
+}
+
+.process__timeline {
+  position: relative;
+  margin-bottom: var(--space-48);
+}
+
+.process__track-line {
+  display: none;
+}
+
+.process__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-32);
+  position: relative;
+}
+
+.process__step {
+  display: flex;
+  gap: var(--space-24);
+  align-items: flex-start;
+  transition-delay: calc(var(--i, 0) * 80ms);
+}
+
+.process__step-marker {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-8);
+}
+
+.process__step-num {
+  font-family: var(--font-serif);
+  font-size: var(--text-lg);
+  font-weight: 500;
+  color: var(--gold-500);
+}
+
+.process__step-dot {
+  width: var(--space-8);
+  height: var(--space-8);
+  border-radius: var(--radius-sm);
+  background-color: var(--gold-500);
+}
+
+.process__step-content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-8);
+}
+
+.process__step-title {
+  font-family: var(--font-serif);
+  font-size: var(--text-2xl);
+  font-weight: 500;
+  color: var(--ink);
+  margin: 0;
+}
+
+.process__step-desc {
+  font-family: var(--font-sans);
+  font-size: var(--text-base);
+  color: var(--ink-soft);
+  line-height: 1.6;
+  margin: 0;
+  max-width: 45ch;
+}
+
+/* Desktop horizontal timeline */
+@media (min-width: 1024px) {
+  .process__track-line {
+    display: block;
+    position: absolute;
+    top: 36px;
+    left: var(--space-24);
+    right: var(--space-24);
+    height: 1px;
+    background-color: var(--line);
+    z-index: 1;
+  }
+
+  .process__grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--space-32);
+    z-index: 2;
+  }
+
+  .process__step {
+    flex-direction: column;
+    gap: var(--space-16);
+  }
+
+  .process__step-marker {
+    align-items: flex-start;
+    gap: var(--space-12);
+  }
+
+  .process__step-dot {
+    background-color: var(--navy-700);
+    border: 2px solid var(--gold-500);
+    border-radius: var(--radius-sm);
+  }
+}
+
+.process__footer {
+  padding-top: var(--space-24);
+  border-top: 1px solid var(--line);
+}
+
+.process__note {
+  font-family: var(--font-sans);
+  font-size: var(--text-sm);
+  font-style: italic;
+  color: var(--ink-soft);
+  margin: 0;
+}
