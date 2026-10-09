@@ -1,6 +1,13 @@
 import React from 'react';
 import Header from './components/Header';
 import Hero from './sections/Hero';
+import About from './sections/About';
+import Services from './sections/Services';
+import Process from './sections/Process';
+import Industries from './sections/Industries';
+import Commitment from './sections/Commitment';
+import Contact from './sections/Contact';
+import Footer from './components/Footer';
 
 export default function App() {
   return (
@@ -11,7 +18,14 @@ export default function App() {
       <Header />
       <main id="main-content">
         <Hero />
+        <About />
+        <Services />
+        <Process />
+        <Industries />
+        <Commitment />
+        <Contact />
       </main>
+      <Footer />
     </div>
   );
 }
