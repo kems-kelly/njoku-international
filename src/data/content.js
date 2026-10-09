@@ -13,6 +13,16 @@ export const siteContent = {
     shortName: 'Njoku International',
   },
 
+  pageTitles: {
+    home: 'Njoku International — International Business Consulting & Advisory',
+    about: 'About Us — Njoku International',
+    services: 'Our Services — Njoku International',
+    approach: 'How We Work — Njoku International',
+    industries: 'Industries of Interest — Njoku International',
+    commitment: 'Our Commitment — Njoku International',
+    contact: 'Contact Us — Njoku International',
+  },
+
   navigation: [
     { label: 'About', href: '#about' },
     { label: 'Services', href: '#services' },
@@ -32,10 +42,10 @@ export const siteContent = {
       href: '#services',
     },
     image: {
-      src: '/images/hero-globe.jpg',
+      src: '/images/heroEkene.png',
       alt: 'Global commercial connections representation', // DRAFT: client to approve
-      width: 600,
-      height: 450,
+      width: 1280,
+      height: 960,
     },
   },
 
@@ -45,22 +55,29 @@ export const siteContent = {
     // Verbatim client copy:
     statement:
       'Njoku International is an international business consulting and facilitation initiative focused on connecting businesses, fostering professional relationships, and supporting cross-border commercial opportunities.',
-    // Supporting editorial line:
-    supportingLine:
+    // Supporting editorial paragraph:
+    supportingText:
       'Built around relationships. Guided by integrity. Focused on opportunity.', // DRAFT: client to approve
+    microHeading: 'STRATEGY. CONNECTIONS. GROWTH.', // DRAFT: client to approve
+    image: {
+      src: '/images/about-architecture.jpg',
+      alt: 'Contemporary glass and steel office towers in an international business district', // DRAFT: client to approve
+      width: 900,
+      height: 1200,
+    },
   },
 
   services: {
     eyebrow: 'OUR CAPABILITIES', // DRAFT: client to approve
     heading: 'Our Services',
     intro:
-      'Providing discreet, high-trust facilitation to bridge commercial goals across international borders.', // DRAFT: client to approve
+      'Supporting business introductions and conversations across international borders.', // DRAFT: client to approve
     items: [
       {
         number: '01',
         title: 'International Business Introductions',
         description:
-          'Connecting organizations with vetted counterparties to explore mutually beneficial commercial pathways.', // DRAFT: client to approve
+          'Connecting organizations with relevant counterparties to explore mutually beneficial commercial pathways.', // DRAFT: client to approve
       },
       {
         number: '02',
@@ -86,7 +103,7 @@ export const siteContent = {
 
   approach: {
     eyebrow: 'HOW WE WORK', // DRAFT: client to approve
-    heading: 'A Measured, Structured Process', // DRAFT: client to approve
+    heading: 'How We Typically Work', // DRAFT: client to approve
     intro:
       'We bring methodical focus and professional clarity to each international commercial engagement.', // DRAFT: client to approve
     stages: [
@@ -135,7 +152,7 @@ export const siteContent = {
         number: '02',
         title: 'Commodities and Precious Metals',
         description:
-          'Connecting buyers, sellers, and strategic partners in physical commodities and precious metals.', // DRAFT: client to approve
+          'Exploring introductions and business conversations in commodities and precious metals.', // DRAFT: client to approve
         icon: 'Coins',
       },
       {
@@ -165,31 +182,31 @@ export const siteContent = {
         number: '01',
         title: 'Professionalism',
         description:
-          'Upholding rigorous standards of conduct, diligence, and courtesy across every international interaction.', // DRAFT: client to approve
+          'Clear communication, respectful engagement and professional conduct.', // DRAFT: client to approve
       },
       {
         number: '02',
         title: 'Integrity',
         description:
-          'Operating with unyielding ethical principles, absolute honesty, and steadfast dedication to our word.', // DRAFT: client to approve
+          'Approaching business relationships honestly and responsibly.', // DRAFT: client to approve
       },
       {
         number: '03',
         title: 'Transparency',
         description:
-          'Fostering open, straightforward communication with clear boundaries, responsibilities, and expectations.', // DRAFT: client to approve
+          'Clarity around expectations, communication and the nature of each engagement.', // DRAFT: client to approve
       },
       {
         number: '04',
         title: 'Confidentiality',
         description:
-          'Safeguarding sensitive commercial discussions and proprietary interests with the utmost discretion.', // DRAFT: client to approve
+          'Treating sensitive business information with appropriate care.', // DRAFT: client to approve
       },
       {
         number: '05',
         title: 'Responsible Engagement',
         description:
-          'Promoting ethical, sustainable, and conscientious cross-border commercial cooperation.', // DRAFT: client to approve
+          'Engaging responsibly in international business conversations.', // DRAFT: client to approve
       },
     ],
   },
@@ -198,21 +215,23 @@ export const siteContent = {
     eyebrow: 'GET IN TOUCH', // DRAFT: client to approve
     heading: 'Have a business opportunity to discuss?', // DRAFT: client to approve
     intro:
-      'We welcome direct inquiries regarding potential commercial collaborations and strategic facilitation.', // DRAFT: client to approve
+      'We welcome direct inquiries regarding potential commercial collaborations and strategic facilitation.\n\nWhen you write, please include your company, the market you are exploring, and the type of connection you are looking for.', // DRAFT: client to approve
     channels: [
       {
-        label: 'General Enquiries', // DRAFT: client to approve
+        label: 'General Enquiries',
         email: 'info@njokuinternational.com',
         mailto:
           'mailto:info@njokuinternational.com?subject=Business%20Enquiry%20-%20Njoku%20International',
-        description: 'For general consulting and business introduction inquiries.', // DRAFT: client to approve
+        description: 'For general consulting, business introductions and commercial collaboration enquiries.', // DRAFT: client to approve
+        primary: true,
       },
       {
-        label: 'Precious Metals Enquiries', // DRAFT: client to approve
+        label: 'Precious Metals Enquiries',
         email: 'preciousmetals@njokuinternational.com',
         mailto:
           'mailto:preciousmetals@njokuinternational.com?subject=Precious%20Metals%20Enquiry%20-%20Njoku%20International',
-        description: 'For inquiries concerning commodities and precious metals connections.', // DRAFT: client to approve
+        description: 'For enquiries about commodities and precious metals, and related business introductions.', // DRAFT: client to approve
+        primary: false,
       },
     ],
   },

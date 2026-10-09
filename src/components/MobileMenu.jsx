@@ -27,6 +27,11 @@ export default function MobileMenu({ isOpen, onClose, navigation }) {
     if (panelRef.current && !panelRef.current.contains(e.target)) onClose();
   };
 
+  const handleLinkClick = () => {
+    document.body.style.overflow = '';
+    onClose();
+  };
+
   return (
     <div
       id="mobile-navigation"
@@ -42,7 +47,7 @@ export default function MobileMenu({ isOpen, onClose, navigation }) {
                 <a
                   href={item.href}
                   className="mobile-menu__link"
-                  onClick={onClose}
+                  onClick={handleLinkClick}
                   tabIndex={isOpen ? 0 : -1}
                 >
                   {item.label}
@@ -56,9 +61,9 @@ export default function MobileMenu({ isOpen, onClose, navigation }) {
           <Button
             variant="primary"
             size="header"
-            href="mailto:info@njokuinternational.com?subject=Business%20Enquiry%20-%20Njoku%20International"
+            href="#contact"
             className="mobile-menu__cta"
-            onClick={onClose}
+            onClick={handleLinkClick}
             tabIndex={isOpen ? 0 : -1}
           >
             Contact

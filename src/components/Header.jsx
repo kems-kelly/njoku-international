@@ -53,7 +53,7 @@ export default function Header() {
             <Button
               variant="primary"
               size="header"
-              href="mailto:info@njokuinternational.com?subject=Business%20Enquiry%20-%20Njoku%20International"
+              href="#contact"
               className="header__cta"
             >
               Contact

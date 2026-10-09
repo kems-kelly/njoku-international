@@ -9,14 +9,11 @@
   display: flex;
   align-items: center;
   background-color: transparent;
-  border-bottom: 1px solid transparent;
 
   /* Fade-in + slide-down on first load */
   animation: headerEntrance 400ms ease-out both;
 
-  transition:
-    background-color var(--transition),
-    border-color var(--transition);
+  transition: background-color var(--transition);
 }
 
 @media (min-width: 900px) {
@@ -45,7 +42,6 @@
 /* ─── Scrolled State ────────────────────────────────────────────────────── */
 .header--scrolled {
   background-color: var(--navy-700);
-  border-bottom-color: var(--navy-500);
 }
 
 /* ─── Layout ────────────────────────────────────────────────────────────── */
