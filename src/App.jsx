@@ -8,8 +8,11 @@ import Industries from './sections/Industries';
 import Commitment from './sections/Commitment';
 import Contact from './sections/Contact';
 import Footer from './components/Footer';
+import { usePageTitle } from './hooks/usePageTitle';
 
 export default function App() {
+  usePageTitle();
+
   return (
     <div className="site-wrapper">
       <a href="#main-content" className="skip-link">

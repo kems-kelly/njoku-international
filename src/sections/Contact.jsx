@@ -1,46 +1,56 @@
 import React from 'react';
-import { Mail, ArrowUpRight } from 'lucide-react';
+import { ArrowUpRight } from 'lucide-react';
 import { siteContent } from '../data/content';
 import { useReveal } from '../hooks/useReveal';
 import './Contact.css';
 
 export default function Contact() {
   const { eyebrow, heading, intro, channels } = siteContent.contact;
-  const [sectionRef, isRevealed] = useReveal({ threshold: 0.15 });
+  const [sectionRef, isRevealed] = useReveal({ threshold: 0.12 });
 
   return (
-    <section id="contact" className="contact section section--white" ref={sectionRef}>
+    <section id="contact" className="contact section section--paper" ref={sectionRef}>
       <div className="container contact__container">
         <div className="contact__layout">
+
+          {/* Left Column — Introduction */}
           <div className={`contact__left reveal-init ${isRevealed ? 'is-revealed' : ''}`}>
-            <span className="section-eyebrow">{eyebrow}</span>
-            <h2 className="section-title contact__heading">{heading}</h2>
-            <p className="section-intro contact__intro">{intro}</p>
+            <div className="contact__eyebrow-wrapper">
+              <span className="contact__eyebrow-line" aria-hidden="true" />
+              <span className="contact__eyebrow">{eyebrow}</span>
+            </div>
+            <h2 className="contact__heading">
+              Have a business<br />opportunity to discuss?
+            </h2>
+            <p className="contact__intro">{intro}</p>
           </div>
 
-          <div className="contact__right">
-            {channels.map((channel, index) => (
-              <div
+          {/* Right Column — Enquiry Panels */}
+          <div className={`contact__panels reveal-init ${isRevealed ? 'is-revealed' : ''}`}>
+            {channels.map((channel) => (
+              <a
                 key={channel.email}
-                className={`contact__channel reveal-init ${isRevealed ? 'is-revealed' : ''}`}
-                style={{ '--i': index }}
+                href={channel.mailto}
+                className="contact__panel"
+                aria-label={`${channel.label}: ${channel.email}`}
               >
-                <div className="contact__channel-header">
-                  <span className="contact__channel-icon" aria-hidden="true">
-                    <Mail size={18} strokeWidth={1.5} />
-                  </span>
-                  <span className="contact__channel-label">{channel.label}</span>
-                </div>
+                <span className="contact__panel-label">{channel.label}</span>
 
-                <a href={channel.mailto} className="contact__email-link">
-                  <span className="contact__email-text">{channel.email}</span>
-                  <ArrowUpRight size={20} className="contact__email-arrow" aria-hidden="true" />
-                </a>
+                <span className="contact__email-row">
+                  <span className="contact__email">{channel.email}</span>
+                  <ArrowUpRight
+                    size={20}
+                    strokeWidth={1.5}
+                    className="contact__arrow"
+                    aria-hidden="true"
+                  />
+                </span>
 
-                <p className="contact__channel-desc">{channel.description}</p>
-              </div>
+                <span className="contact__panel-desc">{channel.description}</span>
+              </a>
             ))}
           </div>
+
         </div>
       </div>
     </section>

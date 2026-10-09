@@ -19,13 +19,10 @@ export default function Commitment() {
         <div className="commitment__list">
           {values.map((val, index) => (
             <div
-              key={val.number}
+              key={val.title}
               className={`commitment__row reveal-init ${isRevealed ? 'is-revealed' : ''}`}
               style={{ '--i': index }}
             >
-              <div className="commitment__row-num">
-                <span className="commitment__num">{val.number}</span>
-              </div>
               <div className="commitment__row-body">
                 <h3 className="commitment__value-title">{val.title}</h3>
                 <p className="commitment__value-desc">{val.description}</p>

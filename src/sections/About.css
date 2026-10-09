@@ -4,70 +4,175 @@
 }
 
 .about__container {
-  max-width: var(--container-max);
+  max-width: 1300px;
 }
 
-.about__inner {
+.about__grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: var(--space-32);
+  gap: var(--space-48);
+  align-items: start;
 }
 
 @media (min-width: 1024px) {
-  .about__inner {
-    grid-template-columns: 240px 1fr;
+  .about__grid {
+    grid-template-columns: 1.15fr 0.85fr;
     gap: var(--space-64);
+    align-items: start;
   }
 }
 
-.about__header {
+/* Left Column: Company Introduction */
+.about__text-col {
   display: flex;
   flex-direction: column;
 }
 
-.about__accent-line {
-  width: var(--space-48);
+.about__eyebrow-wrapper {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-12);
+  margin-bottom: var(--gap-eyebrow-heading);
+}
+
+.about__eyebrow-line {
+  display: block;
+  width: var(--space-24);
+  height: 1px;
+  background-color: var(--gold-500);
+  opacity: 0.9;
+}
+
+.about__eyebrow {
+  font-family: var(--font-sans);
+  font-size: var(--text-eyebrow);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--gold-text);
+}
+
+.about__statement {
+  font-family: var(--font-serif);
+  font-size: var(--text-h2);
+  font-weight: 400;
+  line-height: 1.15;
+  color: var(--navy-700);
+  letter-spacing: -0.015em;
+  margin: 0 0 var(--gap-heading-intro) 0;
+  max-width: 36ch;
+  text-wrap: pretty;
+}
+
+.about__supporting {
+  font-family: var(--font-sans);
+  font-size: var(--text-body);
+  font-weight: 400;
+  line-height: 1.65;
+  color: var(--ink-soft);
+  margin: 0;
+  max-width: 34rem;
+}
+
+/* Right Column: Architectural Photography & Layered Art Direction */
+.about__visual-col {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding-top: 0;
+}
+
+@media (min-width: 1024px) {
+  .about__visual-col {
+    margin-top: 0;
+  }
+}
+
+.about__micro-badge {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: var(--space-16);
+}
+
+.about__micro-text {
+  font-family: var(--font-sans);
+  font-size: var(--text-eyebrow);
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--gold-text);
+  line-height: 1.4;
+}
+
+.about__micro-line {
+  display: block;
+  width: var(--space-32);
   height: 1px;
   background-color: var(--gold-500);
   margin-top: var(--space-8);
   opacity: 0.8;
 }
 
-.about__content {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-32);
-}
-
-.about__statement {
-  font-family: var(--font-serif);
-  font-size: var(--text-2xl);
-  font-weight: 400;
-  line-height: 1.4;
-  color: var(--ink);
-  letter-spacing: -0.01em;
-  margin: 0;
-  text-wrap: pretty;
-}
-
-@media (min-width: 768px) {
-  .about__statement {
-    font-size: var(--text-3xl);
-  }
+/* Composition with Offset Backdrop Panel */
+.about__composition {
+  position: relative;
+  width: 100%;
+  max-width: 440px;
+  margin-inline: 0;
+  padding: var(--space-16) 0 var(--space-24) var(--space-16);
 }
 
 @media (min-width: 1024px) {
-  .about__statement {
-    font-size: var(--text-4xl);
+  .about__composition {
+    padding: var(--space-24) 0 var(--space-32) var(--space-24);
+    max-width: 100%;
   }
 }
 
-.about__supporting {
-  font-family: var(--font-sans);
-  font-size: var(--text-base);
-  font-weight: 500;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
-  color: var(--gold-500);
-  margin: 0;
+.about__backdrop-panel {
+  position: absolute;
+  top: 35%;
+  left: 0;
+  right: calc(0px - var(--space-24));
+  bottom: 0;
+  background-color: var(--beige-offset);
+  border-radius: var(--radius-sm);
+  z-index: 1;
+}
+
+@media (max-width: 767px) {
+  .about__backdrop-panel {
+    right: calc(0px - var(--space-16));
+  }
+}
+
+.about__image-frame {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  border: 1px solid var(--line);
+  z-index: 2;
+  background-color: var(--mist);
+}
+
+.about__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform var(--transition);
+}
+
+.about__img:hover {
+  transform: scale(1.02);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .about__img:hover {
+    transform: none;
+  }
 }

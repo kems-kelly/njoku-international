@@ -4,43 +4,50 @@ import { useReveal } from '../hooks/useReveal';
 import './Process.css';
 
 export default function Process() {
-  const { eyebrow, heading, intro, stages, note } = siteContent.approach;
-  const [sectionRef, isRevealed] = useReveal({ threshold: 0.15 });
+  const { eyebrow, heading, stages, note } = siteContent.approach;
+  const [sectionRef, isRevealed] = useReveal({ threshold: 0.12 });
+
+  const [primaryStage, ...secondaryStages] = stages;
 
   return (
-    <section id="approach" className="process section section--mist" ref={sectionRef}>
+    <section id="approach" className="process" ref={sectionRef}>
       <div className="container process__container">
+
+        {/* Section Header */}
         <header className={`process__header reveal-init ${isRevealed ? 'is-revealed' : ''}`}>
-          <span className="section-eyebrow">{eyebrow}</span>
-          <h2 className="section-title">{heading}</h2>
-          <p className="section-intro">{intro}</p>
+          <div className="process__eyebrow-wrapper">
+            <span className="process__eyebrow-line" aria-hidden="true" />
+            <span className="process__eyebrow">{eyebrow}</span>
+          </div>
+          <h2 className="process__heading">{heading}</h2>
         </header>
 
-        <div className="process__timeline">
-          <div className="process__track-line" aria-hidden="true" />
-          <div className="process__grid">
-            {stages.map((stage, index) => (
-              <div
-                key={stage.number}
-                className={`process__step reveal-init ${isRevealed ? 'is-revealed' : ''}`}
-                style={{ '--i': index }}
-              >
-                <div className="process__step-marker">
-                  <span className="process__step-num">{stage.number}</span>
-                  <div className="process__step-dot" aria-hidden="true" />
-                </div>
-                <div className="process__step-content">
-                  <h3 className="process__step-title">{stage.name}</h3>
-                  <p className="process__step-desc">{stage.description}</p>
-                </div>
-              </div>
-            ))}
+        {/* Four-Card Row */}
+        <div className={`process__cards reveal-init ${isRevealed ? 'is-revealed' : ''}`}>
+
+          {/* Card 1 — Primary (Navy): keep the "01" as a single anchor mark */}
+          <div className="process__card process__card--primary">
+            <span className="process__num">{primaryStage.number}</span>
+            <h3 className="process__card-title">{primaryStage.name}</h3>
+            <p className="process__card-desc">{primaryStage.description}</p>
           </div>
+
+          {/* Cards 2–4 — No numbers, just title + description */}
+          {secondaryStages.map((stage) => (
+            <div
+              key={stage.number}
+              className="process__card process__card--secondary"
+            >
+              <h3 className="process__card-title">{stage.name}</h3>
+              <p className="process__card-desc">{stage.description}</p>
+            </div>
+          ))}
         </div>
 
-        <div className={`process__footer reveal-init ${isRevealed ? 'is-revealed' : ''}`}>
-          <p className="process__note">{note}</p>
-        </div>
+        {/* Closing Note */}
+        <p className={`process__note reveal-init ${isRevealed ? 'is-revealed' : ''}`}>
+          {note}
+        </p>
       </div>
     </section>
   );

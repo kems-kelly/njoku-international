@@ -5,6 +5,13 @@ import './Footer.css';
 export default function Footer() {
   const { brand, navigation, contact, footer } = siteContent;
 
+  const footerNav = [
+    { label: 'About', href: '#about' },
+    { label: 'Services', href: '#services' },
+    { label: 'Industries', href: '#industries' },
+    { label: 'Contact', href: '#contact' },
+  ];
+
   return (
     <footer className="footer section--deep-navy" aria-label="Site Footer">
       <div className="container footer__container">
@@ -25,7 +32,7 @@ export default function Footer() {
           <div className="footer__nav-block">
             <h4 className="footer__block-title">Navigation</h4>
             <ul className="footer__nav-list">
-              {navigation.map((item) => (
+              {footerNav.map((item) => (
                 <li key={item.href} className="footer__nav-item">
                   <a href={item.href} className="footer__nav-link">
                     {item.label}

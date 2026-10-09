@@ -1,5 +1,4 @@
 import React from 'react';
-import { ArrowUpRight } from 'lucide-react';
 import { siteContent } from '../data/content';
 import { useReveal } from '../hooks/useReveal';
 import './Services.css';
@@ -35,10 +34,6 @@ export default function Services() {
 
               <div className="services__row-desc">
                 <p className="services__item-text">{service.description}</p>
-              </div>
-
-              <div className="services__row-icon" aria-hidden="true">
-                <ArrowUpRight size={18} strokeWidth={1.5} />
               </div>
             </div>
           ))}
