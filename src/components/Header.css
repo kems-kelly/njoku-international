@@ -1,59 +1,85 @@
+/* ─── Header Shell ──────────────────────────────────────────────────────── */
 .header {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   z-index: 100;
-  height: var(--space-64);
+  height: 64px;
   display: flex;
   align-items: center;
   background-color: transparent;
   border-bottom: 1px solid transparent;
-  transition: background-color var(--transition), border-color var(--transition);
+
+  /* Fade-in + slide-down on first load */
+  animation: headerEntrance 400ms ease-out both;
+
+  transition:
+    background-color var(--transition),
+    border-color var(--transition);
 }
 
+@media (min-width: 900px) {
+  .header {
+    height: 76px;
+  }
+}
+
+@keyframes headerEntrance {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .header {
+    animation: none;
+  }
+}
+
+/* ─── Scrolled State ────────────────────────────────────────────────────── */
 .header--scrolled {
-  background-color: var(--navy-900);
+  background-color: var(--navy-700);
   border-bottom-color: var(--navy-500);
 }
 
+/* ─── Layout ────────────────────────────────────────────────────────────── */
 .header__container {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
+/* Logo + wordmark on the left */
 .header__brand {
   display: flex;
   align-items: center;
   gap: var(--space-12);
   text-decoration: none;
-  color: var(--white);
+  flex-shrink: 0;
 }
 
-.header__monogram {
-  display: inline-flex;
+.header__logo {
+  display: block;
+  height: 100px;
+  width: auto;
+  object-fit: contain;
+}
+
+
+/* ─── Right group (nav + CTA + toggle) ─────────────────────────────────── */
+.header__right {
+  display: flex;
   align-items: center;
-  justify-content: center;
-  width: var(--space-32);
-  height: var(--space-32);
-  border-radius: var(--radius-sm);
-  border: 1px solid var(--gold-500);
-  color: var(--gold-500);
-  font-family: var(--font-serif);
-  font-size: var(--text-sm);
-  font-weight: 600;
-  letter-spacing: 0.05em;
+  gap: var(--space-32);
 }
 
-.header__wordmark {
-  font-family: var(--font-serif);
-  font-size: var(--text-base);
-  font-weight: 500;
-  letter-spacing: 0.08em;
-  color: var(--white);
-}
-
+/* ─── Desktop Nav ───────────────────────────────────────────────────────── */
 .header__nav {
   display: none;
 }
@@ -69,51 +95,65 @@
 
 .header__nav-link {
   font-family: var(--font-sans);
-  font-size: var(--text-sm);
-  font-weight: 400;
-  color: var(--mist);
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--white);
   text-decoration: none;
   position: relative;
   padding-block: var(--space-8);
-  transition: color var(--transition);
+  /* No color change on hover — underline effect only */
 }
 
-.header__nav-link:hover {
-  color: var(--gold-500);
+/* Underline grows left → right */
+.header__nav-link::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 4px;
+  width: 0;
+  height: 1px;
+  background: currentColor;
+  transition: width 250ms ease-out;
 }
 
-.header__actions {
-  display: flex;
-  align-items: center;
-  gap: var(--space-16);
+.header__nav-link:hover::after,
+.header__nav-link:focus-visible::after {
+  width: 100%;
 }
 
+/* ─── Contact CTA ───────────────────────────────────────────────────────── */
 .header__cta {
   display: none;
 }
 
+/* ─── Mobile Toggle ─────────────────────────────────────────────────────── */
 .header__toggle {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: var(--space-48);
-  height: var(--space-48);
+  min-width: 44px;
+  min-height: 44px;
   background: transparent;
   border: 1px solid var(--navy-500);
   border-radius: var(--radius-sm);
   color: var(--white);
   cursor: pointer;
-  transition: border-color var(--transition), color var(--transition);
+  transition: border-color var(--transition);
+  flex-shrink: 0;
 }
 
 .header__toggle:hover {
   border-color: var(--gold-500);
-  color: var(--gold-500);
 }
 
+/* ─── Desktop breakpoint ────────────────────────────────────────────────── */
 @media (min-width: 900px) {
   .header__nav {
     display: block;
+  }
+
+  .header__right {
+    gap: var(--space-32);
   }
 
   .header__cta {

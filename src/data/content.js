@@ -16,10 +16,6 @@ export const siteContent = {
   navigation: [
     { label: 'About', href: '#about' },
     { label: 'Services', href: '#services' },
-    { label: 'Approach', href: '#approach' },
-    { label: 'Industries', href: '#industries' },
-    { label: 'Commitment', href: '#commitment' },
-    { label: 'Contact', href: '#contact' },
   ],
 
   hero: {

@@ -42,28 +42,14 @@
   color: var(--white);
 }
 
-.footer__monogram {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: var(--space-32);
-  height: var(--space-32);
-  border-radius: var(--radius-sm);
-  border: 1px solid var(--gold-500);
-  color: var(--gold-500);
-  font-family: var(--font-serif);
-  font-size: var(--text-sm);
-  font-weight: 600;
-  letter-spacing: 0.05em;
+.footer__logo {
+  display: block;
+  height: 64px;
+  width: auto;
+  object-fit: contain;
 }
 
-.footer__wordmark {
-  font-family: var(--font-serif);
-  font-size: var(--text-base);
-  font-weight: 500;
-  letter-spacing: 0.08em;
-  color: var(--white);
-}
+
 
 .footer__tagline {
   font-family: var(--font-sans);

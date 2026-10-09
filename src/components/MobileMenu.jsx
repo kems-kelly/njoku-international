@@ -5,34 +5,26 @@ import './MobileMenu.css';
 export default function MobileMenu({ isOpen, onClose, navigation }) {
   const panelRef = useRef(null);
 
-  // Lock body scroll while open
+  /* Lock body scroll while open */
   useEffect(() => {
     if (isOpen) {
-      const originalOverflow = document.body.style.overflow;
       document.body.style.overflow = 'hidden';
-      return () => {
-        document.body.style.overflow = originalOverflow;
-      };
+      return () => { document.body.style.overflow = ''; };
     }
   }, [isOpen]);
 
-  // Close on Escape key
+  /* Close on Escape */
   useEffect(() => {
     const handleKeyDown = (e) => {
-      if (e.key === 'Escape' && isOpen) {
-        onClose();
-      }
+      if (e.key === 'Escape' && isOpen) onClose();
     };
-
     window.addEventListener('keydown', handleKeyDown);
     return () => window.removeEventListener('keydown', handleKeyDown);
   }, [isOpen, onClose]);
 
-  // Close on outside click
+  /* Close on backdrop click */
   const handleBackdropClick = (e) => {
-    if (panelRef.current && !panelRef.current.contains(e.target)) {
-      onClose();
-    }
+    if (panelRef.current && !panelRef.current.contains(e.target)) onClose();
   };
 
   return (
@@ -63,12 +55,13 @@ export default function MobileMenu({ isOpen, onClose, navigation }) {
         <div className="mobile-menu__footer">
           <Button
             variant="primary"
+            size="header"
             href="mailto:info@njokuinternational.com?subject=Business%20Enquiry%20-%20Njoku%20International"
             className="mobile-menu__cta"
             onClick={onClose}
             tabIndex={isOpen ? 0 : -1}
           >
-            Discuss an Opportunity
+            Contact
           </Button>
         </div>
       </div>

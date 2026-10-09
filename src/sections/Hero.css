@@ -60,10 +60,11 @@
 }
 
 .hero__subline {
-  font-family: var(--font-sans);
-  font-size: var(--text-base);
+  font-family: var(--font-serif);
+  font-size: var(--text-xl);
   font-weight: 400;
-  line-height: 1.5;
+  font-style: italic;
+  line-height: 1.4;
   color: var(--mist);
   max-width: 65ch;
   margin-bottom: var(--space-32);
@@ -71,7 +72,7 @@
 
 @media (min-width: 768px) {
   .hero__subline {
-    font-size: var(--text-lg);
+    font-size: var(--text-2xl);
   }
 }
 

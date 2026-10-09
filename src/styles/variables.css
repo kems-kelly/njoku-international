@@ -48,6 +48,18 @@
   /* Transition Token (one duration and easing token) */
   --transition: 250ms ease-out;
 
+  /* Button Tokens */
+  --btn-radius: 6px;
+  --btn-padding-header: 14px 28px;
+  --btn-padding-default: 16px 32px;
+  --btn-font-size-header: 15px;
+  --btn-font-size-default: 16px;
+  --btn-min-height-header: 44px;
+  --btn-min-height-default: 52px;
+  --btn-shadow-hover: 0 4px 12px rgba(11, 23, 38, 0.25);
+  --btn-shadow-active: 0 1px 4px rgba(11, 23, 38, 0.2);
+  --btn-transition: 200ms ease;
+
   /* Layout */
   --container-max: 1200px;
 }

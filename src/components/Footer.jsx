@@ -11,8 +11,13 @@ export default function Footer() {
         <div className="footer__top">
           <div className="footer__brand-block">
             <a href="#home" className="footer__brand-link" aria-label="Njoku International Home">
-              <span className="footer__monogram" aria-hidden="true">NI</span>
-              <span className="footer__wordmark">{brand.name}</span>
+              <img
+                src="/images/logo.png"
+                alt="Njoku International"
+                className="footer__logo"
+                height="64"
+                width="auto"
+              />
             </a>
             <p className="footer__tagline">{brand.tagline}</p>
           </div>
