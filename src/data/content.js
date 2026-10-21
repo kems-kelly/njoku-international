@@ -6,6 +6,9 @@
  * // DRAFT: client to approve
  */
 
+const contactEmail = 'info@njokuinternational.com';
+const contactSubject = 'Business Enquiry - Njoku International';
+
 export const siteContent = {
   brand: {
     name: 'NJOKU INTERNATIONAL',
@@ -14,13 +17,13 @@ export const siteContent = {
   },
 
   pageTitles: {
-    home: 'Njoku International — International Business Consulting & Advisory',
-    about: 'About Us — Njoku International',
-    services: 'Our Services — Njoku International',
-    approach: 'How We Work — Njoku International',
-    industries: 'Industries of Interest — Njoku International',
-    commitment: 'Our Commitment — Njoku International',
-    contact: 'Contact Us — Njoku International',
+    home: 'Njoku International ΓÇö International Business Consulting & Advisory',
+    about: 'About Us ΓÇö Njoku International',
+    services: 'Our Services ΓÇö Njoku International',
+    approach: 'How We Work ΓÇö Njoku International',
+    industries: 'Industries of Interest ΓÇö Njoku International',
+    commitment: 'Our Commitment ΓÇö Njoku International',
+    contact: 'Contact Us ΓÇö Njoku International',
   },
 
   navigation: [
@@ -35,7 +38,7 @@ export const siteContent = {
     subline: 'International Business Consulting & Strategic Facilitation',
     ctaPrimary: {
       label: 'Discuss an Opportunity', // DRAFT: client to approve
-      href: 'mailto:info@njokuinternational.com?subject=Business%20Enquiry%20-%20Njoku%20International',
+      href: '#contact',
     },
     ctaSecondary: {
       label: 'Explore Our Services', // DRAFT: client to approve
@@ -212,33 +215,49 @@ export const siteContent = {
   },
 
   contact: {
+    email: contactEmail,
+    subject: contactSubject,
     eyebrow: 'GET IN TOUCH', // DRAFT: client to approve
     heading: 'Have a business opportunity to discuss?', // DRAFT: client to approve
     intro:
       'We welcome direct inquiries regarding potential commercial collaborations and strategic facilitation.\n\nWhen you write, please include your company, the market you are exploring, and the type of connection you are looking for.', // DRAFT: client to approve
-    channels: [
-      {
-        label: 'General Enquiries',
-        email: 'info@njokuinternational.com',
-        mailto:
-          'mailto:info@njokuinternational.com?subject=Business%20Enquiry%20-%20Njoku%20International',
-        description: 'For general consulting, business introductions and commercial collaboration enquiries.', // DRAFT: client to approve
-        primary: true,
+    card: {
+      label: 'General enquiries',
+      description:
+        'For general consulting, business introductions and commercial collaboration enquiries.', // DRAFT: client to approve
+    },
+    modal: {
+      title: 'Send us a message',
+      intro: 'Tell us about the connection you are looking for.', // DRAFT: client to approve
+      note: 'Your details are used only to respond to your enquiry.', // DRAFT: client to approve
+      successTitle: 'Message Sent',
+      successMessage:
+        'Thank you. Your message has been sent. We will be in touch if your enquiry is appropriate.',
+      errorMessage: 'Your message could not be sent. Please try again.',
+      fallbackIntro: 'Or email us directly at',
+      closeAction: 'Close',
+      sendAction: 'Send Message',
+      sendingAction: 'Sending...',
+      fields: {
+        nameLabel: 'Name',
+        emailLabel: 'Email',
+        companyLabel: 'Company',
+        optionalBadge: '(optional)',
+        messageLabel: 'Message',
       },
-      {
-        label: 'Precious Metals Enquiries',
-        email: 'preciousmetals@njokuinternational.com',
-        mailto:
-          'mailto:preciousmetals@njokuinternational.com?subject=Precious%20Metals%20Enquiry%20-%20Njoku%20International',
-        description: 'For enquiries about commodities and precious metals, and related business introductions.', // DRAFT: client to approve
-        primary: false,
+      validation: {
+        nameRequired: 'Please enter your name.',
+        emailRequired: 'Please enter your email address.',
+        emailInvalid: 'Please enter a valid email address.',
+        messageRequired: 'Please enter a message.',
+        messageMinLength: 'Message must be at least 20 characters.',
       },
-    ],
+    },
   },
 
   footer: {
     disclaimer:
       'Njoku International provides introductions and facilitation. Nothing on this site is investment, legal or financial advice.', // DRAFT: client to approve
-    copyright: `© ${new Date().getFullYear()} Njoku International. All rights reserved.`,
+    copyright: `┬⌐ ${new Date().getFullYear()} Njoku International. All rights reserved.`,
   },
 };

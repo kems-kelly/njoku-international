@@ -12,6 +12,8 @@
   --ink-soft: #556275;   /* secondary text (passes 4.5:1 on light backgrounds) */
   --beige-offset: #EDE5D7; /* soft neutral beige offset panel */
   --line:     #E4E7EC;   /* borders */
+  --error:    #A8201A;   /* dark red for errors (contrast > 6:1 on white and paper) */
+  --backdrop: rgba(11, 23, 38, 0.45); /* modal backdrop overlay */
 
   /* Spacing Scale (4, 8, 12, 16, 24, 32, 48, 64, 96, 128px) */
   --space-4: 4px;
@@ -57,8 +59,10 @@
   /* Transition Token (one duration and easing token) */
   --transition: 250ms ease-out;
 
-  /* Button Tokens */
+  /* Button and Input Tokens */
   --btn-radius: 6px;
+  --input-radius: 6px;
+  --input-min-height: 52px;
   --btn-padding-header: 14px 28px;
   --btn-padding-default: 16px 32px;
   --btn-font-size-header: 15px;

@@ -1,4 +1,4 @@
-import React from 'react';
+﻿import React from 'react';
 import { siteContent } from '../data/content';
 import { useReveal } from '../hooks/useReveal';
 import './Process.css';
@@ -25,14 +25,14 @@ export default function Process() {
         {/* Four-Card Row */}
         <div className={`process__cards reveal-init ${isRevealed ? 'is-revealed' : ''}`}>
 
-          {/* Card 1 — Primary (Navy): keep the "01" as a single anchor mark */}
+          {/* Card 1 ΓÇö Primary (Navy): keep the "01" as a single anchor mark */}
           <div className="process__card process__card--primary">
             <span className="process__num">{primaryStage.number}</span>
             <h3 className="process__card-title">{primaryStage.name}</h3>
             <p className="process__card-desc">{primaryStage.description}</p>
           </div>
 
-          {/* Cards 2–4 — No numbers, just title + description */}
+          {/* Cards 2ΓÇô4 ΓÇö No numbers, just title + description */}
           {secondaryStages.map((stage) => (
             <div
               key={stage.number}

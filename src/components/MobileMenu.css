@@ -1,7 +1,7 @@
 /* ─── Overlay ────────────────────────────────────────────────────────────── */
 .mobile-menu {
   position: fixed;
-  top: 64px;          /* matches .header mobile height */
+  top: 92px;          /* matches .header mobile height */
   left: 0;
   right: 0;
   bottom: 0;
@@ -52,12 +52,13 @@
 
 .mobile-menu__link {
   display: block;
-  font-family: var(--font-serif);
-  font-size: var(--text-2xl);
-  font-weight: 400;
+  font-family: var(--font-sans);
+  font-size: 1.25rem;
+  font-weight: 500;
   color: var(--white);
   text-decoration: none;
   padding-block: var(--space-12);
+  letter-spacing: 0.01em;
 }
 
 /* ─── Footer / CTA ───────────────────────────────────────────────────────── */

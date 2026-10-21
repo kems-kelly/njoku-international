@@ -56,8 +56,14 @@
 /* ─── Secondary Variant ─────────────────────────────────────────────────── */
 .btn--secondary {
   background-color: transparent;
-  color: var(--paper);
+  color: var(--navy-900);
   border-color: var(--gold-500);
+}
+
+.section--deep-navy .btn--secondary,
+.hero .btn--secondary,
+.footer .btn--secondary {
+  color: var(--paper);
 }
 
 .btn--secondary:hover {
@@ -75,6 +81,16 @@
 .btn--secondary:focus-visible {
   outline: 2px solid var(--gold-500);
   outline-offset: 3px;
+}
+
+/* ─── Disabled State ────────────────────────────────────────────────────── */
+.btn:disabled,
+.btn[aria-disabled="true"] {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none !important;
+  box-shadow: none !important;
+  filter: none !important;
 }
 
 /* ─── Reduced Motion ────────────────────────────────────────────────────── */

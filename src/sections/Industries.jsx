@@ -1,4 +1,4 @@
-import React from 'react';
+﻿import React from 'react';
 import { siteContent } from '../data/content';
 import { useReveal } from '../hooks/useReveal';
 import './Industries.css';
@@ -14,7 +14,7 @@ export default function Industries() {
       <div className="container industries__container">
         <div className="industries__layout">
 
-          {/* Left Column — Introduction */}
+          {/* Left Column ΓÇö Introduction */}
           <div className={`industries__intro reveal-init ${isRevealed ? 'is-revealed' : ''}`}>
             <div className="industries__eyebrow-wrapper">
               <span className="industries__eyebrow-line" aria-hidden="true" />
@@ -26,10 +26,10 @@ export default function Industries() {
             <p className="industries__intro-text">{intro}</p>
           </div>
 
-          {/* Right Column — 2×2 Panel Grid */}
+          {/* Right Column ΓÇö 2├ù2 Panel Grid */}
           <div className={`industries__grid reveal-init ${isRevealed ? 'is-revealed' : ''}`}>
 
-            {/* Panel 01 — Navy Primary */}
+            {/* Panel 01 ΓÇö Navy Primary */}
             <div className="industries__panel industries__panel--primary">
               <div className="industries__panel-top">
                 <span className="industries__num">{primaryItem.number}</span>
@@ -39,7 +39,7 @@ export default function Industries() {
               <p className="industries__panel-desc">{primaryItem.description}</p>
             </div>
 
-            {/* Panels 02–04 — Ivory Secondary (no numbers) */}
+            {/* Panels 02ΓÇô04 ΓÇö Ivory Secondary (no numbers) */}
             {secondaryItems.map((item) => (
               <div
                 key={item.title}

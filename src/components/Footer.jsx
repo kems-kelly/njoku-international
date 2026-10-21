@@ -45,14 +45,15 @@ export default function Footer() {
           <div className="footer__contact-block">
             <h4 className="footer__block-title">Direct Enquiries</h4>
             <ul className="footer__contact-list">
-              {contact.channels.map((channel) => (
-                <li key={channel.email} className="footer__contact-item">
-                  <span className="footer__contact-label">{channel.label}</span>
-                  <a href={channel.mailto} className="footer__email-link">
-                    {channel.email}
-                  </a>
-                </li>
-              ))}
+              <li className="footer__contact-item">
+                <span className="footer__contact-label">General enquiries</span>
+                <a
+                  href={`mailto:${contact.email}?subject=${encodeURIComponent(contact.subject)}`}
+                  className="footer__email-link"
+                >
+                  {contact.email}
+                </a>
+              </li>
             </ul>
           </div>
         </div>

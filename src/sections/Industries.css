@@ -1,5 +1,5 @@
 /* =========================================================
-   AREAS OF FOCUS — Industries Section
+   AREAS OF FOCUS ΓÇö Industries Section
    ========================================================= */
 
 .industries {
@@ -20,7 +20,7 @@
   max-width: 1300px;
 }
 
-/* ── Two-Column Layout ────────────────────────────────── */
+/* ΓöÇΓöÇ Two-Column Layout ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ */
 .industries__layout {
   display: grid;
   grid-template-columns: 1fr;
@@ -36,7 +36,7 @@
   }
 }
 
-/* ── Left Column: Introduction ────────────────────────── */
+/* ΓöÇΓöÇ Left Column: Introduction ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ */
 .industries__intro {
   display: flex;
   flex-direction: column;
@@ -68,11 +68,11 @@
 
 .industries__eyebrow {
   font-family: var(--font-sans);
-  font-size: var(--text-xs);
+  font-size: var(--text-eyebrow);
   font-weight: 600;
   text-transform: uppercase;
-  letter-spacing: 0.16em;
-  color: var(--gold-500);
+  letter-spacing: 0.14em;
+  color: var(--gold-text);
 }
 
 .industries__heading {
@@ -95,7 +95,7 @@
   max-width: 30rem;
 }
 
-/* ── Right Column: 2×2 Panel Grid ────────────────────── */
+/* ΓöÇΓöÇ Right Column: 2├ù2 Panel Grid ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ */
 .industries__grid {
   display: grid;
   grid-template-columns: 1fr;
@@ -109,13 +109,13 @@
   }
 }
 
-/* ── Panel Base ───────────────────────────────────────── */
+/* ΓöÇΓöÇ Panel Base ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ */
 .industries__panel {
   display: flex;
   flex-direction: column;
   padding: var(--space-32);
   border-radius: var(--radius-sm);
-  transition: border-color var(--transition);
+  transition: border-color var(--transition), transform var(--transition), box-shadow var(--transition);
 }
 
 @media (min-width: 1024px) {
@@ -124,7 +124,7 @@
   }
 }
 
-/* ── Panel Top (number + rule) ────────────────────────── */
+/* ΓöÇΓöÇ Panel Top (number + rule) ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ */
 .industries__panel-top {
   display: flex;
   align-items: center;
@@ -142,15 +142,10 @@
 }
 
 .industries__num-line {
-  display: block;
-  flex: 1;
-  max-width: 36px;
-  height: 1px;
-  background-color: var(--gold-500);
-  opacity: 0.75;
+  display: none;
 }
 
-/* ── Panel Typography ─────────────────────────────────── */
+/* ΓöÇΓöÇ Panel Typography ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ */
 .industries__panel-title {
   font-family: var(--font-serif);
   font-size: var(--text-item-title);
@@ -168,7 +163,7 @@
   margin: 0;
 }
 
-/* ── Panel 01 — Navy Primary ──────────────────────────── */
+/* ΓöÇΓöÇ Panel 01 ΓÇö Navy Primary ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ */
 .industries__panel--primary {
   background-color: var(--navy-700);
   border: none;
@@ -182,7 +177,7 @@
   color: rgba(248, 247, 244, 0.72);
 }
 
-/* ── Panels 02–04 — Ivory Secondary ──────────────────── */
+/* ΓöÇΓöÇ Panels 02ΓÇô04 ΓÇö Ivory Secondary ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ */
 .industries__panel--secondary {
   background-color: var(--paper);
   border: 1px solid #DFD2BD;
@@ -190,6 +185,8 @@
 
 .industries__panel--secondary:hover {
   border-color: var(--gold-500);
+  transform: translateY(-3px);
+  box-shadow: var(--shadow);
 }
 
 .industries__panel--secondary .industries__panel-title {
@@ -200,7 +197,7 @@
   color: #69778C;
 }
 
-/* ── Reduced Motion ───────────────────────────────────── */
+/* ΓöÇΓöÇ Reduced Motion ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ */
 @media (prefers-reduced-motion: reduce) {
   .industries__panel {
     transition: none !important;

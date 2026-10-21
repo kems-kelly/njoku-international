@@ -4,7 +4,7 @@ import Button from '../components/Button';
 import './Hero.css';
 
 export default function Hero() {
-  const { eyebrow, subline, ctaPrimary, ctaSecondary, image } = siteContent.hero;
+  const { eyebrow, subline, ctaPrimary, image } = siteContent.hero;
 
   return (
     <section id="home" className="hero section section--deep-navy" aria-label="Hero">
@@ -35,13 +35,6 @@ export default function Hero() {
               className="hero__btn"
             >
               {ctaPrimary.label}
-            </Button>
-            <Button
-              variant="secondary"
-              href={ctaSecondary.href}
-              className="hero__btn"
-            >
-              {ctaSecondary.label}
             </Button>
           </div>
         </div>

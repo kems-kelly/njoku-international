@@ -1,5 +1,5 @@
 /* =========================================================
-   HOW WE WORK — Process Section
+   HOW WE WORK ΓÇö Process Section
    ========================================================= */
 
 .process {
@@ -20,7 +20,7 @@
   max-width: 1300px;
 }
 
-/* ── Section Header ───────────────────────────────────── */
+/* ΓöÇΓöÇ Section Header ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ */
 .process__header {
   margin-bottom: var(--space-48);
 }
@@ -49,11 +49,11 @@
 
 .process__eyebrow {
   font-family: var(--font-sans);
-  font-size: var(--text-xs);
+  font-size: var(--text-eyebrow);
   font-weight: 600;
   text-transform: uppercase;
-  letter-spacing: 0.16em;
-  color: var(--gold-500);
+  letter-spacing: 0.14em;
+  color: var(--gold-text);
 }
 
 .process__heading {
@@ -66,7 +66,7 @@
   margin: 0;
 }
 
-/* ── Four-Card Row ────────────────────────────────────── */
+/* ΓöÇΓöÇ Four-Card Row ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ */
 .process__cards {
   display: grid;
   grid-template-columns: 1fr;
@@ -88,12 +88,13 @@
   }
 }
 
-/* ── Card Base ────────────────────────────────────────── */
+/* ΓöÇΓöÇ Card Base ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ */
 .process__card {
   display: flex;
   flex-direction: column;
   padding: var(--space-32);
   border-radius: var(--radius-sm);
+  transition: border-color var(--transition), transform var(--transition), box-shadow var(--transition);
 }
 
 @media (min-width: 1024px) {
@@ -102,7 +103,7 @@
   }
 }
 
-/* ── Primary card number mark (01 only) ─────────────── */
+/* ΓöÇΓöÇ Primary card number mark (01 only) ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ */
 .process__num {
   font-family: var(--font-sans);
   font-size: var(--text-xs);
@@ -113,7 +114,7 @@
   display: block;
 }
 
-/* ── Card Titles & Descriptions ──────────────────────── */
+/* ΓöÇΓöÇ Card Titles & Descriptions ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ */
 .process__card-title {
   font-family: var(--font-serif);
   font-size: var(--text-item-title);
@@ -131,7 +132,7 @@
   margin: 0;
 }
 
-/* ── Card 1 — Navy Primary ───────────────────────────── */
+/* ΓöÇΓöÇ Card 1 ΓÇö Navy Primary ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ */
 .process__card--primary {
   background-color: var(--navy-700);
   border: none;
@@ -145,15 +146,20 @@
   color: rgba(248, 247, 244, 0.75);
 }
 
-/* ── Cards 2–4 — Ivory Secondary (no numbers) ────────── */
+/* ΓöÇΓöÇ Cards 2ΓÇô4 ΓÇö Ivory Secondary (no numbers) ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ */
 .process__card--secondary {
   background-color: var(--paper);
   border: 1px solid #DFD2BD;
 }
 
+.process__card--secondary:hover {
+  border-color: var(--gold-500);
+  transform: translateY(-3px);
+  box-shadow: var(--shadow);
+}
+
 .process__card--secondary .process__card-title {
   color: var(--navy-700);
-  /* Titles start at top — natural hierarchy without numbering */
   margin-top: 0;
 }
 
@@ -161,7 +167,7 @@
   color: #69778C;
 }
 
-/* ── Closing Note ─────────────────────────────────────── */
+/* ΓöÇΓöÇ Closing Note ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ */
 .process__note {
   font-family: var(--font-serif);
   font-size: clamp(1rem, 1.1vw, 1.125rem);
@@ -172,7 +178,7 @@
   opacity: 0.7;
 }
 
-/* ── Reduced Motion ──────────────────────────────────── */
+/* ΓöÇΓöÇ Reduced Motion ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ */
 @media (prefers-reduced-motion: reduce) {
   .process__card {
     transition: none !important;

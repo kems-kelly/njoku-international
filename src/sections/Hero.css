@@ -107,7 +107,7 @@
 .hero__subline {
   font-family: var(--font-sans);
   font-size: var(--text-hero-subline);
-  font-weight: 400;
+  font-weight: 300;
   font-style: normal;
   line-height: 1.5;
   color: rgba(255, 255, 255, 0.90);
@@ -135,11 +135,14 @@
     flex-direction: column;
     align-items: flex-start;
     gap: var(--space-12);
+    width: 100%;
   }
 
   .hero__btn {
-    width: 100%;
-    max-width: 280px;
+    width: auto;
+    max-width: 100%;
+    text-align: left;
+    justify-content: center;
   }
 }
 

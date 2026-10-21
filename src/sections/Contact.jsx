@@ -1,12 +1,24 @@
-import React from 'react';
+import React, { useState, useRef } from 'react';
 import { ArrowUpRight } from 'lucide-react';
 import { siteContent } from '../data/content';
 import { useReveal } from '../hooks/useReveal';
+import ContactModal from './ContactModal';
 import './Contact.css';
 
 export default function Contact() {
-  const { eyebrow, heading, intro, channels } = siteContent.contact;
+  const { eyebrow, heading, intro, card, email } = siteContent.contact;
   const [sectionRef, isRevealed] = useReveal({ threshold: 0.12 });
+
+  const [modalOpen, setModalOpen] = useState(false);
+  const cardRef = useRef(null);
+
+  const handleOpenModal = () => {
+    setModalOpen(true);
+  };
+
+  const handleCloseModal = () => {
+    setModalOpen(false);
+  };
 
   return (
     <section id="contact" className="contact section section--paper" ref={sectionRef}>
@@ -25,34 +37,39 @@ export default function Contact() {
             <p className="contact__intro">{intro}</p>
           </div>
 
-          {/* Right Column — Enquiry Panels */}
+          {/* Right Column — Enquiry Panel */}
           <div className={`contact__panels reveal-init ${isRevealed ? 'is-revealed' : ''}`}>
-            {channels.map((channel) => (
-              <a
-                key={channel.email}
-                href={channel.mailto}
-                className="contact__panel"
-                aria-label={`${channel.label}: ${channel.email}`}
-              >
-                <span className="contact__panel-label">{channel.label}</span>
+            <button
+              ref={cardRef}
+              type="button"
+              className="contact__panel"
+              onClick={handleOpenModal}
+              aria-label={`Open message form for ${card.label}`}
+            >
+              <span className="contact__panel-label">{card.label}</span>
 
-                <span className="contact__email-row">
-                  <span className="contact__email">{channel.email}</span>
-                  <ArrowUpRight
-                    size={20}
-                    strokeWidth={1.5}
-                    className="contact__arrow"
-                    aria-hidden="true"
-                  />
-                </span>
+              <span className="contact__email-row">
+                <span className="contact__email">{email}</span>
+                <ArrowUpRight
+                  size={20}
+                  strokeWidth={1.5}
+                  className="contact__arrow"
+                  aria-hidden="true"
+                />
+              </span>
 
-                <span className="contact__panel-desc">{channel.description}</span>
-              </a>
-            ))}
+              <span className="contact__panel-desc">{card.description}</span>
+            </button>
           </div>
 
         </div>
       </div>
+
+      <ContactModal
+        isOpen={modalOpen}
+        onClose={handleCloseModal}
+        returnFocusRef={cardRef}
+      />
     </section>
   );
 }

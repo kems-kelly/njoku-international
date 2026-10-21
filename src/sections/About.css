@@ -142,8 +142,17 @@
 }
 
 @media (max-width: 767px) {
+  .about__visual-col {
+    width: 100%;
+  }
+
+  .about__composition {
+    max-width: 100%;
+    padding: 0;
+  }
+
   .about__backdrop-panel {
-    right: calc(0px - var(--space-16));
+    display: none;
   }
 }
 
